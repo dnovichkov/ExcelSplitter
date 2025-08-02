@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -31,7 +32,7 @@ jobs:
           pyinstaller --onefile --name excel_splitter main.py
 
       - name: Archive build output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: excel-splitter-windows
           path: dist/excel_splitter.exe
